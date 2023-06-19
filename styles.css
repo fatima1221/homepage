@@ -220,6 +220,14 @@ body {
   padding-left: 20px;
 }
 
+li {
+  list-style: none;
+}
+li::before {
+  content: "\1F43E";
+  margin-right: 0.5em;
+}
+
 .additional-info {
   flex: 1 1 40%;
 }
@@ -263,4 +271,51 @@ body {
 
 .additional-info__languages-item {
   color: var(--secondary-text-color);
+}
+
+.attention-tail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+button.attention-tail-btn {
+  background-color: none;
+  padding: 10px 15px;
+  border: 2px solid #ff9a00;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+button.attention-tail-btn:hover {
+  animation: shake 0.5s infinite, blink 1s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
